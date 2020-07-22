@@ -24,8 +24,12 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-mongoose.connect('mongodb://localhost/googlebooks', {useNewUrlParser: true});
-
-app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+mongoose.connect('mongodb://localhost/googlebooks', {useNewUrlParser: true},
+function(error) {
+  if (error) throw error;
+  app.listen(PORT, function() {
+    console.log(`🌎 ==> API server now on port ${PORT}!`);
+  });
 });
+
+

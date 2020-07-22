@@ -1,15 +1,15 @@
-const express = require('express')
-const router = express.router()
+const express = require('express');
+const router = express.Router();
 
-const { list } = require('../controllers')
+const { book } = require('../controllers')
 
-//api/books
+//GET api/books
 router.get('/', book.list)
 
 //POSt api/books
 router.post('/', book.add)
 
 //DELETE api/books/_id
-router.post('/:_id', book.remove)
+router.delete('/:_id', book.delete)
 
 module.exports = router;
