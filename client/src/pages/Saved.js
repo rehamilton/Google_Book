@@ -10,24 +10,24 @@ export default function Search() {
     const [search, setSearch] = useState('');
     const[books, setBooks] = useState([])
 
-    const onSave = API.saveBook
+    const onDelete = API.deleteBook
 
     const onSearch = async (evt) => {
         evt.preventDefault();
 
-        const result = await API.searchBooks(search);
+        const result = await API.getBooks();
         console.log(result);
-        console.log(result.items[0].volumeInfo.imageLinks.thumbnail);
-        const books = result.items.map((book) => ({
-            id: book.id,
-            title: book.volumeInfo.title,
-            description: book.volumeInfo.description,
-            author: book.volumeInfo.authors,
-            link: book.volumeInfo.infoLink,
-            image: book.volumeInfo.imageLinks.thumbnail,
-            onSave,
-        }))
-        setBooks(books)
+       
+        // const books = result.map((book) => ({
+        //     id: book.id,
+        //     title: book.volumeInfo.title,
+        //     description: book.volumeInfo.description,
+        //     author: book.volumeInfo.authors,
+        //     link: book.volumeInfo.infoLink,
+        //     image: book.volumeInfo.imageLinks.thumbnail,
+        //     onDelete,
+        // }))
+        // setBooks(books)
     }
 
     return (

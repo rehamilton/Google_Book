@@ -18,5 +18,30 @@ export default {
         })
 
         return response.json()
+    },
+
+    async deleteBook(book) {
+        
+        const response = await fetch('/api/books/:id', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(book)
+        })
+
+        return response.json()
+    },
+
+    async getBooks() {
+
+        const response = await fetch('/api/books', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+
     }
 }

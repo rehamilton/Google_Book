@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Search from './pages/Search'
-
-
+import Navbar from './components/Nav'
+import Saved from './pages/Saved'
 
 
 function App() {
@@ -13,17 +13,14 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Nav /> */}
+        <Navbar />
         <Switch>
           <Route exact path = {['/', '/search']}>
             <Search />
           </Route>
-          {/* <Route exact path ='/books/:id'>
-            <Detault />
-          </Route> */}
-          {/* <Route>
-            <NoMatch />
-          </Route> */}
+          <Route exact path ='/books/:id'>
+            <Saved />
+          </Route>
         </Switch>
       </div>
     </Router>
