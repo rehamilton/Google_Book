@@ -17,7 +17,7 @@ export default function Search() {
 
         const result = await API.searchBooks(search);
         console.log(result);
-        console.log(result.items[0].volumeInfo.imageLinks.thumbnail);
+        // console.log(result.items[0].volumeInfo.imageLinks.thumbnail);
         const books = result.items.map((book) => ({
             id: book.id,
             title: book.volumeInfo.title,
@@ -41,6 +41,7 @@ export default function Search() {
                     />
                 </Col>
             </Row>
+            <Row></Row>
             <Row>
                 <Col>
                     <BookList books={books}/>

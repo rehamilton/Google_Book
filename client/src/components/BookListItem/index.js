@@ -3,7 +3,7 @@ import React from 'react';
 import { Row, Col, ListGroup, Image, Button } from 'react-bootstrap'
 
 
-function BookListItem( { id, title, description, link, author, image, onSave, onDelete }) {
+function BookListItem( { _id, id, title, description, link, author, image, onSave, onDelete }) {
 
     return( 
 
@@ -16,20 +16,13 @@ function BookListItem( { id, title, description, link, author, image, onSave, on
                     {link && <Button as="a" href={link} target="_blank">View</Button>}
                     {onSave && (
                         <Button 
-                        onClick={
-                        () => {
-                            onSave({title, description, image, link, author})
-                            }
-                        }>
+                        onClick={() => {onSave({title, description, image, link, author})}}>
                             Save
                         </Button>
                     )}
-                    {onDelete && (<Button onClick={onDelete} variant="danger">Delete</Button>)}
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <p>{link}</p>
+                    {onDelete && (<Button onClick={() => onDelete({_id})} 
+                        variant="danger">Delete</Button>
+                    )}
                 </Col>
             </Row>
             <Row>

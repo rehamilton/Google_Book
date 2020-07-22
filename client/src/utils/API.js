@@ -1,4 +1,6 @@
 
+
+
 export default {
 
     async searchBooks(title) {
@@ -21,13 +23,13 @@ export default {
     },
 
     async deleteBook(book) {
-        
-        const response = await fetch('/api/books/:id', {
+        console.log({book});
+        const response = await fetch('/api/books/' + book._id, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(book)
+           
         })
 
         return response.json()
