@@ -26,11 +26,11 @@ export default function Search() {
         getBooks()
     },[])
 
-    
+
 
 
     return (
-        <Container>
+        <Container className="mt-4">
             <Row>
                 <Col>
                     <BookList books={books} onDelete ={onDelete}/>

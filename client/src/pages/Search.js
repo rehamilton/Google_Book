@@ -3,6 +3,7 @@ import SearchInput from '../components/SearchInput';
 import BookList from '../components/BookList';
 import API from '../utils/API';
 import { Container, Row, Col } from 'react-bootstrap';
+import Header from '../components/Header'
 
 
 export default function Search() {
@@ -31,23 +32,29 @@ export default function Search() {
     }
 
     return (
-        <Container>
-            <Row>
-                <Col>
-                    <SearchInput 
-                    search={search} 
-                    onSearchChange={setSearch} 
-                    onSearch={onSearch}
-                    />
-                </Col>
-            </Row>
-            <Row></Row>
-            <Row>
-                <Col>
-                    <BookList books={books}/>
-                </Col>
-            </Row>
-        </Container>
+        <>
+            <Header />
+            <Container className="mt-4">
+                <Row>
+                    <Col>
+                        <SearchInput 
+                        search={search} 
+                        onSearchChange={setSearch} 
+                        onSearch={onSearch}
+                        />
+                    </Col>
+                </Row>
+            </Container>
+            
+            <Container className="mt-4">
+                <Row>
+                    <Col>
+                        <BookList books={books}/>
+                    </Col>
+                </Row>
+            </Container>
+
+        </>
     )
 
 }

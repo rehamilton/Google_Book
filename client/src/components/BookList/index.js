@@ -9,10 +9,10 @@ function BookList({ books, onDelete }) {
 
     return(
 
-        <Card >
-            <Card.Title>Results</Card.Title>
+        <Card>
+            <Card.Title className="p-2">Results</Card.Title>
 
-            <Card.Body>
+            <Card.Body className="p-2">
                 <ListGroup>
                     {books.map((book) => (
                         <BookListItem key={book.id || book._id} {...book} onDelete={onDelete} />

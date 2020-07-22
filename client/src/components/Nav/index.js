@@ -7,10 +7,10 @@ function Navigator() {
 
     return(
         <Container>
-            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand href="/">Google Books</Navbar.Brand>
-                <Nav.Link>Link</Nav.Link>
-              
+                <Navbar.Brand href="/search">Search</Navbar.Brand>
+                <Navbar.Brand href="/saved">Saved</Navbar.Brand>
             </Navbar>
         </Container>
     )

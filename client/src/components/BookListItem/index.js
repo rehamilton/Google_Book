@@ -7,20 +7,21 @@ function BookListItem( { _id, id, title, description, link, author, image, onSav
 
     return( 
 
-        <ListGroup.Item>
+        <ListGroup.Item >
             <Row>
                 <Col md={9}>
                     <h2>{title}</h2>
                 </Col>
                 <Col>
-                    {link && <Button as="a" href={link} target="_blank">View</Button>}
+                    {link && <Button as="a" href={link} className = "float-right m-1" target="_blank">View</Button>}
                     {onSave && (
                         <Button 
+                        className = "float-right m-1"
                         onClick={() => {onSave({title, description, image, link, author})}}>
                             Save
                         </Button>
                     )}
-                    {onDelete && (<Button onClick={() => onDelete({_id})} 
+                    {onDelete && (<Button className = "float-right m-1" onClick={() => onDelete({_id})} 
                         variant="danger">Delete</Button>
                     )}
                 </Col>
