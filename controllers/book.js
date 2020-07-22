@@ -19,5 +19,5 @@ exports.delete = async function deleteBook(req, res) {
     const { _id } = req.params;
     await Book.deleteOne({ _id: _id})
     res.json({ _id })
-    
+
 }

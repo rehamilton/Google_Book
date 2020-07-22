@@ -3,7 +3,7 @@ import BookListItem from '../BookListItem'
 
 import { ListGroup, Card } from 'react-bootstrap';
 
-function BookList() {
+function BookList({ books }) {
 
     return(
 
@@ -11,7 +11,9 @@ function BookList() {
             <Card.Title>Results</Card.Title>
             <Card.Body>
                 <ListGroup>
-                    <BookListItem />
+                    {books.map((book) => (
+                        <BookListItem key={book.id} {...book} />
+                    ))}
                 </ListGroup>
             </Card.Body>
         </Card>
