@@ -1,16 +1,33 @@
 import React, {Component, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Wrapper from "./components/Wrapper";
-import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Search from './pages/Search'
 
 
-export default function App() {
+
+
+function App() {
 
   
   return (
-    <Wrapper>
-      <Header>BOOOKS!!!!</Header>
-    </Wrapper>
+    <Router>
+      <div>
+        {/* <Nav /> */}
+        <Switch>
+          <Route exact path = {['/', '/search']}>
+            <Search />
+          </Route>
+          {/* <Route exact path ='/books/:id'>
+            <Detault />
+          </Route> */}
+          {/* <Route>
+            <NoMatch />
+          </Route> */}
+        </Switch>
+      </div>
+    </Router>
   );
 }
+
+export default App;
